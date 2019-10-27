@@ -1,0 +1,100 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.31.2.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 688194afaf02f915942c648804cd7c082fec52ab5cef3f7b89ca1e14f8294f1f
+
+name:           inoutcome
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/githubuser/inoutcome#readme>
+homepage:       https://github.com/githubuser/inoutcome#readme
+bug-reports:    https://github.com/githubuser/inoutcome/issues
+author:         Author name here
+maintainer:     example@example.com
+copyright:      2019 Author name here
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/githubuser/inoutcome
+
+library
+  exposed-modules:
+      Lib
+      Server
+      Model.Schema
+      View.SignIn
+      View.SignUp
+      View.Account
+      View.Charts
+      View.AccountModule.DBMaintenance
+  other-modules:
+      Paths_inoutcome
+  hs-source-dirs:
+      src
+  build-depends:
+      base >=4.7 && <5
+      , monad-logger
+      , persistent
+      , persistent-sqlite
+      , persistent-template
+      , Spock >=0.11
+      , text
+      , mtl
+      , http-types
+      , lucid
+      , Spock-lucid
+      , monad-logger
+      , persistent
+      , persistent-sqlite
+      , persistent-template
+      , aeson
+      , bytestring
+      , containers
+      , blaze-bootstrap
+      , blaze-html
+      , wai-middleware-static
+      , wai-websockets
+      , websockets
+      , Spock-core
+      , Chart
+      , Chart-diagrams
+      , deepseq
+      , time
+      , colour
+      , directory
+      , filepath
+      , old-locale
+  default-language: Haskell2010
+
+executable inoutcome-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_inoutcome
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , inoutcome
+  default-language: Haskell2010
+
+test-suite inoutcome-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_inoutcome
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , inoutcome
+  default-language: Haskell2010
